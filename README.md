@@ -2,7 +2,8 @@
 A slack bot for receiving status notifications from SaltStack. 
 
 Mr.SaltSlack offers the following features in its current state:  
-
+* Notification on minion start
+* Notification on job return (Success/Fail and return code)
 
 ## Installation
 Mr.SaltSlack is a link between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack installation script, before Mr.SaltSlack is able to run.  
