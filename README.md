@@ -33,7 +33,7 @@ To disable a feature, all you need to do is remove/comment the feature's respect
   
 **To disable notification on minion start, comment the following lines:**  
 `- 'salt/minion/*/start':
-    - /srv/reactor/mrSaltSlack_start.sls`
+    - /srv/reactor/mrSaltSlack_start.sls`  
 **To disable notification on job return, comment the following lines:**  
 `- 'salt/job/*/ret/*':
     - /srv/reactor/mrSaltSlack_ret.sls`
