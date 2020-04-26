@@ -4,6 +4,10 @@
 # mrSaltSlack_ret.sls - Salt sls file that sends data to Slack when a function returns.
 # mrSaltSlack_start.sls - Salt sls file that sends data to Slack when a minion starts.
 
+# Read the Slack webhook identifier
+echo "Insert your Slack webhook identifier:"
+read identifier
+
 mkdir -p /etc/salt
 mkdir -p /etc/salt/master.d
 touch /etc/salt/master.d/reactor.conf
@@ -25,3 +29,8 @@ reactor:
     - /srv/reactor/mrSaltSlack.sls
 " >> /etc/salt/master.d/reactor.conf
 fi
+
+# Insert slack webhook identifier in mrSaltSlack sls files. (Replace placeholder "[[slack-identifier]]" with the supplied webhook identifier)
+sed -i -e 's/[[slack-identifier]]/$identifier/g' /srv/reactor/SaltSlack_ret.sls
+sed -i -e 's/[[slack-identifier]]/$identifier/g' /srv/reactor/SaltSlack_start.sls
+
