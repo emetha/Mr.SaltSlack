@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 mkdir -p /etc/salt
 mkdir -p /etc/salt/master.d
+mkdir -p /srv/reactor
 touch /etc/salt/master.d/reactor.sls
 
 # If the reactor has been declared, only insert the reactor connection.
@@ -17,7 +18,7 @@ reactor:
 " >> /etc/salt/master.d/reactor.conf
 fi
 
-mkdir -p /srv/salt
+
 mv /src/mrSaltStack.sls /srv/salt/mrSaltStack.sls
 
 mkdir -p /usr/local/bin/salt_scripts/
