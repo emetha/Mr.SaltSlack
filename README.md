@@ -32,8 +32,8 @@ But you can always disable features or contribute by adding more!
 To disable a feature, all you need to do is remove/comment the feature's respective code blocke in `/etc/salt/master.d/reactor.conf`.  
   
 **To disable notification on minion start, comment the following lines:**  
-`- 'salt/minion/*/start':
-    - /srv/reactor/mrSaltSlack_start.sls`  
+```- 'salt/minion/*/start':
+    - /srv/reactor/mrSaltSlack_start.sls```  
 **To disable notification on job return, comment the following lines:**  
-`- 'salt/job/*/ret/*':
-    - /srv/reactor/mrSaltSlack_ret.sls`
+```- 'salt/job/*/ret/*':
+    - /srv/reactor/mrSaltSlack_ret.sls```
