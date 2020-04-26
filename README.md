@@ -1,4 +1,4 @@
-# saltstack-slack-bot
+# Mr.SaltSlack
 A slack bot for receiving status notifications from SaltStack. 
 
 ## Installation
