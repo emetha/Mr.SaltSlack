@@ -3,14 +3,29 @@ mkdir -p /etc/salt
 mkdir -p /etc/salt/master.d
 touch /etc/salt/master.d/reactor.sls
 
+# If the reactor has been declared, only insert the reactor connection.
 if grep -q 'reactor:' /etc/salt/master.d/reactor.sls; then
-  echo 'WRITE OUR TEXT' >> /etc/salt/master.d/reactor.sls
+  echo "
+- 'salt/minion/*/start':
+    - /srv/reactor/mrSaltStack.sls
+" >> /etc/salt/master.d/reactor.sls
+else
+  echo "
+reactor:
+- 'salt/minion/*/start':
+    - /srv/reactor/mrSaltStack.sls
+" >> /etc/salt/master.d/reactor.sls
 fi
 
 mkdir -p /srv/salt
-touch /srv/salt/mrSaltStack
+mv /src/mrSaltStack.sls /srv/salt/mrSaltStack.sls
 
-echo 'All
-  of
-    our
-    text' >> /srv/salt/mrSaltStack
+mkdir -p /usr/local/bin/salt_scripts/
+mv send_to_slack.py /usr/local/bin/salt_scripts/send_to_slack.py
+
+echo 'test-python:
+  local.cmd.run:
+    - tgt: phwe-VirtualBox
+    - args:
+      - cmd: python /usr/local/bin/salt_scripts/send_to_slack.py
+    ' >> /srv/salt/mrSaltStack.sls
