@@ -47,4 +47,4 @@ To disable a feature, all you need to do is remove/comment the feature's respect
 ### Debugging
 If you run into issues, we recommend using the debug mode of the Salt master:  
 `salt-master -l debug`  
-This mode gives more information than simply setting the logging mode to "debug", by editing the master configuration file.  
+This mode gives more information than simply setting the logging mode to "debug" in the master configuration file.  
