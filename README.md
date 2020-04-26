@@ -2,7 +2,7 @@
 A slack bot for receiving status notifications from SaltStack. 
 
 ## Installation
-Mr.SaltSlack is an extension between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack script, before Mr.SaltSlack is able to run.  
+Mr.SaltSlack is a link between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack installation script, before Mr.SaltSlack is able to run.  
 ### Install Salt
 Click [here](https://repo.saltstack.com/#ubuntu) to go to the Salt installation guide. 
 But in the time of writing, the Salt installation goes as follows, on Ubuntu systems:
