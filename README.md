@@ -1,6 +1,9 @@
 # Mr.SaltSlack
 A slack bot for receiving status notifications from SaltStack. 
 
+Mr.SaltSlack offers the following features in its current state:  
+
+
 ## Installation
 Mr.SaltSlack is a link between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack installation script, before Mr.SaltSlack is able to run.  
 ### Install Salt
@@ -19,3 +22,17 @@ In the time of writing, the Salt installation goes as follows, on Ubuntu systems
 Assuming that you either have not declared a salt reactor, or have declared the reactor in `/etc/salt/master.d/reactor.sls`, you only need to run the installation script:  
 `sudo ./install.sh`  
 and supply your Slack webhook identifier when prompted.
+
+## How to use Mr.SaltSlack
+Assuming you have installed Mr.SaltSlack correctly and that you want all the default features that Mr.SaltSlack provides, you don't have to do anything. When a monitored event in Salt happens, Mr.SaltSlack will automatically message you in your Slack channel.  
+  
+But you can always disable features or contribute by adding more!
+
+### Disable features
+To disable a feature, all you need to do is remove/comment the feature's respective code blocke in `/etc/salt/master.d/reactor.conf`.  
+To disable notification on minion start, comment the following lines:  
+`- 'salt/minion/*/start':
+    - /srv/reactor/mrSaltSlack_start.sls`
+To disable notification on job return, comment the following lines:  
+`- 'salt/job/*/ret/*':
+    - /srv/reactor/mrSaltSlack_ret.sls`
