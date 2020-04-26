@@ -16,8 +16,6 @@ In the time of writing, the Salt installation goes as follows, on Ubuntu systems
 ### Set up Slack webhook
 
 ### Install Mr.SaltSlack
-Assuming that you either have not declared a salt reactor, or have declared the reactor in `/etc/salt/master.d/reactor.sls`, you only need to:
-1. Add the webhook identifier: 
-
-2. Run the installation script:
+Assuming that you either have not declared a salt reactor, or have declared the reactor in `/etc/salt/master.d/reactor.sls`, you only need to run the installation script:
 `sudo ./install.sh`
+and supply your Slack webhook identifier when prompted.
