@@ -25,9 +25,7 @@ Assuming that you either have not declared a salt reactor, or have declared the 
 and supply your Slack webhook identifier when prompted.
 
 ## How to use Mr.SaltSlack
-Assuming you have installed Mr.SaltSlack correctly and that you want all the default features that Mr.SaltSlack provides, you only need to start the monitoring of Salt's event bus:  
-`salt-run state.event pretty=True`  
-When a monitored event in Salt happens, Mr.SaltSlack will automatically message you in your Slack channel.  
+Assuming you have installed Mr.SaltSlack correctly and that you want all the default features that Mr.SaltSlack provides, you don't have to do anything. When a monitored event in Salt happens, Mr.SaltSlack will automatically message you in your Slack channel.  
   
 But you can always disable features or contribute by adding more!
 
@@ -48,3 +46,6 @@ To disable a feature, all you need to do is remove/comment the feature's respect
 If you run into issues, we recommend using the debug mode of the Salt master:  
 `salt-master -l debug`  
 This mode gives more information than simply setting the logging mode to "debug" in the master configuration file.  
+  
+You can also monitor the event bus with:  
+`salt-run state.event pretty=True`
