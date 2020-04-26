@@ -29,8 +29,7 @@ Assuming you have installed Mr.SaltSlack correctly and that you want all the def
 But you can always disable features or contribute by adding more!
 
 ### Disable features
-To disable a feature, all you need to do is remove/comment the feature's respective code block in  
-`/etc/salt/master.d/reactor.conf`.  
+To disable a feature, all you need to do is remove/comment the feature's respective code block in `/etc/salt/master.d/reactor.conf`.  
   
 **To disable notification on minion start, comment the following lines:**  
 ```bash
