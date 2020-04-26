@@ -25,7 +25,7 @@ mv send_to_slack.py /usr/local/bin/salt_scripts/send_to_slack.py
 
 echo 'test-python:
   local.cmd.run:
-    - tgt: phwe-VirtualBox
+    - tgt: {{ data['id'] }}
     - args:
       - cmd: python /usr/local/bin/salt_scripts/send_to_slack.py
     ' >> /srv/salt/mrSaltStack.sls
