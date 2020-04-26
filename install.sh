@@ -20,13 +20,17 @@ mv /src/mrSaltSlack_start.sls /srv/reactor/
 if grep -q 'reactor:' /etc/salt/master.d/reactor.conf; then
   echo "
 - 'salt/minion/*/start':
-    - /srv/reactor/mrSaltSlack.sls
+    - /srv/reactor/mrSaltSlack_start.sls
+- 'salt/job/*/ret/*':
+    - /srv/reactor/mrSaltSlack_ret.sls
 " >> /etc/salt/master.d/reactor.conf
 else
   echo "
 reactor:
 - 'salt/minion/*/start':
-    - /srv/reactor/mrSaltSlack.sls
+    - /srv/reactor/mrSaltSlack_start.sls
+- 'salt/job/*/ret/*':
+    - /srv/reactor/mrSaltSlack_ret.sls
 " >> /etc/salt/master.d/reactor.conf
 fi
 
