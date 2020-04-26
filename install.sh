@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
+
+# rector.conf - The Salt reactor configuration file.
+# mrSaltSlack_ret.sls - Salt sls file that sends data to Slack when a function returns.
+# mrSaltSlack_start.sls - Salt sls file that sends data to Slack when a minion starts.
+
 mkdir -p /etc/salt
 mkdir -p /etc/salt/master.d
-touch /etc/salt/master.d/reactor.sls
+touch /etc/salt/master.d/reactor.conf
 
 mkdir -p /srv/reactor
-mv /src/mrSaltSlack.sls /srv/reactor/mrSaltSlack.sls
+mv /src/mrSaltSlack_ret.sls /srv/reactor/
+mv /src/mrSaltSlack_start.sls /srv/reactor/
 
 # If the reactor has been declared, only insert the reactor connection.
 if grep -q 'reactor:' /etc/salt/master.d/reactor.conf; then
@@ -19,13 +25,3 @@ reactor:
     - /srv/reactor/mrSaltSlack.sls
 " >> /etc/salt/master.d/reactor.conf
 fi
-
-mkdir -p /usr/local/bin/salt_scripts/
-mv send_to_slack.py /usr/local/bin/salt_scripts/send_to_slack.py
-
-echo 'test-python:
-  local.cmd.run:
-    - tgt: {{ data['id'] }}
-    - args:
-      - cmd: python /usr/local/bin/salt_scripts/send_to_slack.py
-    ' >> /srv/salt/mrSaltSlack.sls
