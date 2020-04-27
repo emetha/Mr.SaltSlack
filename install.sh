@@ -15,6 +15,7 @@ touch /etc/salt/master.d/reactor.conf
 mkdir -p /srv/reactor
 cp src/mrSaltSlack_ret.sls /srv/reactor/
 cp src/mrSaltSlack_start.sls /srv/reactor/
+cp src/mrSaltSlack_auth.sls /srv/reactor/
 
 # If the reactor has been declared, only insert the reactor connection.
 if grep -q 'reactor:' /etc/salt/master.d/reactor.conf; then
@@ -37,4 +38,5 @@ fi
 # Insert slack webhook identifier in mrSaltSlack sls files. (Replace placeholder "[[slack-identifier]]" with the supplied webhook identifier)
 sed -i "s|identifierplaceholder|$identifier|g" /srv/reactor/mrSaltSlack_ret.sls
 sed -i "s|identifierplaceholder|$identifier|g" /srv/reactor/mrSaltSlack_start.sls
+sed -i "s|identifierplaceholder|$identifier|g" /srv/reactor/mrSaltSlack_auth.sls
 
