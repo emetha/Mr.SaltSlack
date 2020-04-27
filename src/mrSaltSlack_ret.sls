@@ -6,7 +6,7 @@ slack-message:
         message: "Command {{ data['fun'] }} was successfully issued!"
         username: MrSaltSlack
         channel: "#saltstack-slack-bot"
-        identifier: [[slack-identifier]]
+        identifier: [[slackIdentifier]]
         attachment: "MinionID: {{ data['id'] }}
                      \nReturn: {{ data['return'] }}"
         color: "#00cc00"
@@ -23,5 +23,5 @@ slack-message:
         username: MrSaltSlack
         channel: "#saltstack-slack-bot"
         color: "#cc0000"
-        identifier: [[slack-identifier]]
+        identifier: [[slackIdentifier]]
 {% endif %}
