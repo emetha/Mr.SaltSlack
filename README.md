@@ -18,6 +18,13 @@ In the time of writing, the Salt installation goes as follows, on Ubuntu systems
 3. Run in terminal: `sudo apt update`
 4. Run in terminal: `sudo apt install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api`
 
+Don't forget add the minions' keys to the master:
+1. Make sure the minions' configuration resolve to the salt-master (for example by creating an entry that resolves salt to the IP of the salt-master in /etc/hosts).
+2. Display keys: `salt-key -L`. 
+3. Accept all minions' keys: `salt-key -A` (not recommended from a security perspective).
+  
+*For further information about initial configuration of Salt: Click [here](https://docs.saltstack.com/en/latest/ref/configuration/index.html).*
+
 ### Set up Slack webhook
 Salt gives a good guide on how to set up a webhook for your Slack App, which you can find [here](https://api.slack.com/messaging/webhooks).
 
