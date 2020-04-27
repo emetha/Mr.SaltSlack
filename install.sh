@@ -13,8 +13,8 @@ mkdir -p /etc/salt/master.d
 touch /etc/salt/master.d/reactor.conf
 
 mkdir -p /srv/reactor
-mv ./src/mrSaltSlack_ret.sls /srv/reactor/
-mv ./src/mrSaltSlack_start.sls /srv/reactor/
+mv src/mrSaltSlack_ret.sls /srv/reactor/
+mv src/mrSaltSlack_start.sls /srv/reactor/
 
 # If the reactor has been declared, only insert the reactor connection.
 if grep -q 'reactor:' /etc/salt/master.d/reactor.conf; then
