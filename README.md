@@ -3,8 +3,17 @@ A slack bot for receiving status notifications from SaltStack.
 
 Mr.SaltSlack offers the following features in its current state:  
 * Notification on minion start
+
+![When a minion is started](https://github.com/emetha/Mr.SaltSlack/blob/master/img/minion-start.png)
+
 * Notification on job return (Success/Fail and return code)
+
+![Command accepted](https://github.com/emetha/Mr.SaltSlack/blob/master/img/command-accepted.png)
+![Command failed](https://github.com/emetha/Mr.SaltSlack/blob/master/img/command-failed.png)
+
 * Notification on minion-key authentication check status (Success/Pending/Fail)
+
+![When a minion-key is accepted](https://github.com/emetha/Mr.SaltSlack/blob/master/img/key-accepted.png)
 
 ## Installation
 Mr.SaltSlack is a link between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack installation script, before Mr.SaltSlack is able to run.  
