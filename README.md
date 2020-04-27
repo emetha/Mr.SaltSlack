@@ -3,8 +3,17 @@ A slack bot for receiving status notifications from SaltStack.
 
 Mr.SaltSlack offers the following features in its current state:  
 * Notification on minion start
+
+![When a minion is started](https://github.com/emetha/Mr.SaltSlack/blob/master/img/minion-start.png)
+
 * Notification on job return (Success/Fail and return code)
+
+![Command accepted](https://github.com/emetha/Mr.SaltSlack/blob/master/img/command-accepted.png)
+![Command failed](https://github.com/emetha/Mr.SaltSlack/blob/master/img/command-failed.png)
+
 * Notification on minion-key authentication check status (Success/Pending/Fail)
+
+![When a minion-key is accepted](https://github.com/emetha/Mr.SaltSlack/blob/master/img/key-accepted.png)
 
 ## Installation
 Mr.SaltSlack is a link between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack installation script, before Mr.SaltSlack is able to run.  
@@ -14,7 +23,7 @@ Click [here](https://repo.saltstack.com/#ubuntu) to go to the Salt installation 
 
 In the time of writing, the Salt installation goes as follows, on Ubuntu systems:
 
-1. Run in terminal: `wget -O - https://repo.saltstack.com/apt/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -`
+1. Run in terminal: `wget -O - https://repo.saltstack.com/apt/ubuntu/18.04/amd64/latest/SALTSTACK-GPG-KEY.pub | sudo apt-key add -` (Choose the appropriate SaltStack gpg key - in our case we used the key intended for Ubuntu 18.04)
 2. Save the following file to /etc/apt/sources.list.d/saltstack.list: `deb http://repo.saltstack.com/apt/ubuntu/18.04/amd64/latest bionic main`
 3. Run in terminal: `sudo apt update`
 4. Run in terminal: `sudo apt install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api`
