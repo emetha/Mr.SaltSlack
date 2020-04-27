@@ -35,7 +35,7 @@ https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
 
 ```
 
-1. The webhook token that you need for Mr.SaltSlack is ´https://hooks.slack.com/services/< your-token >´.  
+6. The webhook token that you need for Mr.SaltSlack is ´https://hooks.slack.com/services/< your-token >´.  
 
 ### Install Mr.SaltSlack
 Assuming that you either have not declared a salt reactor, or have declared the reactor in `/etc/salt/master.d/reactor.sls`, you only need to run the installation script:  
