@@ -35,6 +35,6 @@ reactor:
 fi
 
 # Insert slack webhook identifier in mrSaltSlack sls files. (Replace placeholder "[[slack-identifier]]" with the supplied webhook identifier)
-sed -i -e 's/[[slack-identifier]]/$identifier/g' /srv/reactor/SaltSlack_ret.sls
-sed -i -e 's/[[slack-identifier]]/$identifier/g' /srv/reactor/SaltSlack_start.sls
+sed -i -e 's/[[slackIdentifier]]/$identifier/g' /srv/reactor/mrSaltSlack_ret.sls
+sed -i -e 's/[[slackIdentifier]]/$identifier/g' /srv/reactor/mrSaltSlack_start.sls
 
