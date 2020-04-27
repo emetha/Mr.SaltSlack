@@ -5,6 +5,6 @@ slack-message:
         message: "Minion {{ data['id'] }} Started!"
         username: MrSaltSlack
         channel: "#saltstack-slack-bot"
-        identifier: [[slack-identifier]]
+        identifier: [[slackIdentifier]]
         attachment: "{{ data['data'] }}"
         color: "#F35A00"
