@@ -6,7 +6,7 @@ slack-auth-accept-message:
         message: "Minion Key Accepted!"
         username: MrSaltSlack
         channel: "#saltstack-slack-bot"
-        identifier: T010E8TJPSB/B010JFXBXFH/GUqH3k9XDC8cTnf59n2oEnCh
+        identifier: identifierplaceholder
         attachment: "Key for minion with id {{ data['id'] }} has been accepted!"
         color: "#F35A00"
 {% endif %}
@@ -19,7 +19,7 @@ slack-auth-accept-message:
         message: "Minion Key Pending..."
         username: MrSaltSlack
         channel: "#saltstack-slack-bot"
-        identifier: T010E8TJPSB/B010JFXBXFH/GUqH3k9XDC8cTnf59n2oEnCh
+        identifier: identifierplaceholder
         attachment: "Key for minion with id {{ data['id'] }} is pending."
         color: "#F35A00"
 {% endif %}
@@ -32,7 +32,7 @@ slack-auth-accept-message:
         message: "Minion Key Rejected!"
         username: MrSaltSlack
         channel: "#saltstack-slack-bot"
-        identifier: T010E8TJPSB/B010JFXBXFH/GUqH3k9XDC8cTnf59n2oEnCh
+        identifier: identifierplaceholder
         attachment: "Key for minion with id {{ data['id'] }} has been rejected!"
         color: "#F35A00"
 {% endif %}
