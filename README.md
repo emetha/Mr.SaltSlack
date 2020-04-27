@@ -4,6 +4,7 @@ A slack bot for receiving status notifications from SaltStack.
 Mr.SaltSlack offers the following features in its current state:  
 * Notification on minion start
 * Notification on job return (Success/Fail and return code)
+* Notification on minion-key authentication check status (Success/Pending/Fail)
 
 ## Installation
 Mr.SaltSlack is a link between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack installation script, before Mr.SaltSlack is able to run.  
@@ -66,6 +67,11 @@ To disable a feature, all you need to do is remove/comment the feature's respect
 ```bash
 - 'salt/job/*/ret/*':
     - /srv/reactor/mrSaltSlack_ret.sls
+```
+**To disable notification on minion-key authentication check, comment the following lines:**  
+```bash
+- 'salt/auth':
+    - /srv/reactor/mrSaltSlack_auth.sls
 ```
 ### Debugging
 If you run into issues, we recommend using the debug mode of the Salt master:  
