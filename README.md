@@ -74,3 +74,5 @@ This mode gives more information than simply setting the logging mode to "debug"
   
 You can also monitor the event bus with:  
 `salt-run state.event pretty=True`
+  
+Have you tried turning it off and on again? Some configurations and other settings are loaded on start, try to restart the salt master and salt minions.
