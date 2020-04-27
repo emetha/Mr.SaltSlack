@@ -7,6 +7,7 @@ Mr.SaltSlack offers the following features in its current state:
 
 ## Installation
 Mr.SaltSlack is a link between Salt and Slack. Because of this you will have to install [Salt](https://repo.saltstack.com/#ubuntu), create a slack webhook and run the Mr.SaltSlack installation script, before Mr.SaltSlack is able to run.  
+
 ### Install Salt
 Click [here](https://repo.saltstack.com/#ubuntu) to go to the Salt installation guide.  
 
@@ -18,6 +19,23 @@ In the time of writing, the Salt installation goes as follows, on Ubuntu systems
 4. Run in terminal: `sudo apt install salt-master salt-minion salt-ssh salt-syndic salt-cloud salt-api`
 
 ### Set up Slack webhook
+Salt gives a good guide on how to set up a webhook for your Slack App, which you can find [here](https://api.slack.com/messaging/webhooks).
+
+In the time of writing, setting up the Slack webhook goes as follows:
+
+1. Create a Slack App (see [here](https://api.slack.com/start/building)).
+2. Enable incoming webhooks, via your Apps management dashboard, by selecting *incoming webhooks* feature and switch on *activate incoming webhooks* toggle. 
+3. After step 2, a few more options should be available. One of these is the *add new webhook to workspace* button, click on it to generate an incoming webhook URL. 
+4. You will then be re-directed and be asked for other information. Here, you choose the channel that the app will post to and click *authorize* once done. 
+5. Now, you will be sent back to the app settings and under the section *Webhooks URL for Your Workspace* you will find a new webhook URL entry which should look something like this:
+
+```
+
+https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+
+```
+
+1. The webhook token that you need for Mr.SaltSlack is ´https://hooks.slack.com/services/< your-token >´.  
 
 ### Install Mr.SaltSlack
 Assuming that you either have not declared a salt reactor, or have declared the reactor in `/etc/salt/master.d/reactor.sls`, you only need to run the installation script:  
@@ -25,7 +43,7 @@ Assuming that you either have not declared a salt reactor, or have declared the 
 and supply your Slack webhook identifier when prompted.
 
 ## How to use Mr.SaltSlack
-Assuming you have installed Mr.SaltSlack correctly and that you want all the default features that Mr.SaltSlack provides, you don't have to do anything. When a monitored event in Salt happens, Mr.SaltSlack will automatically message you in your Slack channel.  
+Assuming you have installed Mr.SaltSlack correctly and that you want all the default features that Mr.SaltSlack provides, you don't have to do anything. When a monitored event in Salt happens, Mr.SaltSlack will automatically message you in your Slack channel. 
   
 But you can always disable features or contribute by adding more!
 
